@@ -1,8 +1,20 @@
 package dnit.ativa.specification;
 import org.springframework.data.jpa.domain.Specification;
+
 import dnit.ativa.model.Modelo;
 
 public class SpecModelo {
+
+
+    public static Specification<Modelo> criaSpec (String uf, String br, String km, String kmi, String kmf, String nome, String condicao) {
+        return Specification.where(SpecModelo.UF(uf)
+                            .and(SpecModelo.BR(br))
+                            .and(SpecModelo.km(km))
+                            .and(SpecModelo.kmi(kmi))
+                            .and(SpecModelo.kmf(kmf))
+                            .and(SpecModelo.nome(nome))
+                            .and(SpecModelo.condicao(condicao)));
+    }
 
 
     public static Specification<Modelo> UF(String uf) {

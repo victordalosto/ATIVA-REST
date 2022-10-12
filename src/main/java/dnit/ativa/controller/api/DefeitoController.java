@@ -21,13 +21,8 @@ public class DefeitoController implements APIController {
     public List<? extends Modelo> get(String nome, String condicao, 
                                       String uf, String br, String km, 
                                       String kmi, String kmf) {
-        Specification<Modelo> especification =
-        Specification.where(SpecModelo.UF(uf)
-                       .and(SpecModelo.BR(br))
-                       .and(SpecModelo.km(km))
-                       .and(SpecModelo.kmi(kmi))
-                       .and(SpecModelo.kmf(kmf))
-                       .and(SpecModelo.nome(nome)));
+        Specification<Modelo> especification  =
+            SpecModelo.criaSpec(uf, br, km, kmi, kmf, nome, null);
         return defeitoRepository.findAll(especification);
     }
 

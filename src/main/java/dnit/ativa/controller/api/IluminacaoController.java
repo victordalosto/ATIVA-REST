@@ -22,12 +22,7 @@ public class IluminacaoController implements APIController {
                                       String uf, String br, String km, 
                                       String kmi, String kmf) {
         Specification<Modelo> especification =
-        Specification.where(SpecModelo.UF(uf)
-                       .and(SpecModelo.BR(br))
-                       .and(SpecModelo.km(km))
-                       .and(SpecModelo.kmi(kmi))
-                       .and(SpecModelo.kmf(kmf))
-                       .and(SpecModelo.nome(nome)));
+            SpecModelo.criaSpec(uf, br, km, kmi, kmf, nome, null);
         return iluminacaoRepository.findAll(especification);
     }
 

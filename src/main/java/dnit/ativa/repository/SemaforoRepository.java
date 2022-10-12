@@ -1,11 +1,10 @@
 package dnit.ativa.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-
 import dnit.ativa.model.Modelo;
-import dnit.ativa.model.Posto;
+import dnit.ativa.model.Semaforo;
 
-public interface PostoRepository extends JpaRepository<Posto, Integer>,
-                                         JpaSpecificationExecutor<Modelo> {
+public interface SemaforoRepository extends JpaRepository<Semaforo, Integer>,
+                                            JpaSpecificationExecutor<Modelo> {
 
 }

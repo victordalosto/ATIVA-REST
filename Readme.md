@@ -13,7 +13,7 @@ Para obter os dados de sinalização da malha rodoviaria do distrito federal em 
 ```
 .../api/sinalizacao?uf=df&condicao=ruim
 ```
-Para buscar todos os defeitos no pavimento da Bahia, da BR-080, entre os KMs 330 e 360:
+Para buscar todos os defeitos no pavimento da Bahia, da BR-020, entre os KMs 330 e 360:
 ```
 .../api/defeito?uf=ba&br=020&kmi=330000&kmf=360000
 ```

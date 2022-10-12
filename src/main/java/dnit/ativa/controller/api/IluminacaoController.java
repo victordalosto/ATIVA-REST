@@ -20,6 +20,7 @@ public class IluminacaoController implements APIController {
     @GetMapping
     public List<? extends Modelo> get(String nome, String condicao, 
                                       String uf, String br, String km, 
+<<<<<<< HEAD
                                       String kmi, String kmf) {
         Specification<Modelo> especification =
         Specification.where(SpecModelo.UF(uf)
@@ -28,6 +29,19 @@ public class IluminacaoController implements APIController {
                        .and(SpecModelo.kmi(kmi))
                        .and(SpecModelo.kmf(kmf))
                        .and(SpecModelo.nome(nome)));
+=======
+                                      String kmI, String kmF) {
+        if (nome == null && condicao == null && uf == null && br == null 
+            && km == null && kmI == null && kmF == null)
+            return iluminacaoRepository.findAll();
+        Specification<Modelo> especification =
+        Specification.where(SpecModelo.UF(uf)
+                        .and(SpecModelo.BR(br))
+                        .and(SpecModelo.km(km))
+                        .and(SpecModelo.kmI(kmI))
+                        .and(SpecModelo.kmF(kmF))
+                        .and(SpecModelo.nome(nome)));
+>>>>>>> bb531304c47b727a5cb6188f3745098e415cff1c
         return iluminacaoRepository.findAll(especification);
     }
 

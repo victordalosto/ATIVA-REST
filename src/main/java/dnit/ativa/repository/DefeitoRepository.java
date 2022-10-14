@@ -5,7 +5,9 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import dnit.ativa.model.Defeito;
 import dnit.ativa.model.Modelo;
 
-public interface DefeitoRepository extends JpaRepository<Defeito, Integer>,
+public interface DefeitoRepository extends APIRepository,
+                                           JpaRepository<Defeito, Integer>,
                                            JpaSpecificationExecutor<Modelo> {
+                                            
 
 }

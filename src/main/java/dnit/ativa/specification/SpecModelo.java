@@ -6,7 +6,9 @@ import dnit.ativa.model.Modelo;
 public class SpecModelo {
 
 
-    public static Specification<Modelo> criaSpec (String uf, String br, String km, String kmi, String kmf, String nome, String condicao) {
+    public static Specification<Modelo> criaSpec (
+            String nome, String condicao, String uf, String br,
+            String km, String kmi, String kmf) {
         return Specification.where(SpecModelo.UF(uf)
                             .and(SpecModelo.BR(br))
                             .and(SpecModelo.km(km))

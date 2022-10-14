@@ -28,6 +28,6 @@ public class Sinalizacao implements Modelo {
     private Integer km;
     private Double x;
     private Double y;
-    
-    
+
+
 }

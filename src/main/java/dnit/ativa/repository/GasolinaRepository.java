@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import dnit.ativa.model.Gasolina;
 import dnit.ativa.model.Modelo;
 
-public interface GasolinaRepository extends JpaRepository<Gasolina, Integer>,
+public interface GasolinaRepository extends APIRepository,
+                                            JpaRepository<Gasolina, Integer>,
                                             JpaSpecificationExecutor<Modelo> {
 
 }

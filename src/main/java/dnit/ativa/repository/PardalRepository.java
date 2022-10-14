@@ -4,7 +4,8 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import dnit.ativa.model.Modelo;
 import dnit.ativa.model.Semaforo;
 
-public interface PardalRepository extends JpaRepository<Semaforo, Integer>,
+public interface PardalRepository extends APIRepository,
+                                          JpaRepository<Semaforo, Integer>,
                                           JpaSpecificationExecutor<Modelo> {
 
 }

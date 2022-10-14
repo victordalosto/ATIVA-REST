@@ -18,7 +18,7 @@ public class Defeito implements Modelo {
     private String nome;
 
     @Transient
-    private String condicao = "RUIM";
+    private String condicao;
 
     @Column(columnDefinition = "CHAR")
     private String uf;

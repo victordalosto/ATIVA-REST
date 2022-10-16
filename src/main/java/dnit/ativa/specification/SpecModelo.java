@@ -19,6 +19,7 @@ public class SpecModelo {
     }
 
 
+
     public static Specification<Modelo> UF(String uf) {
         return (root, criteriaQuery, criteriaBuilder) ->  {
             if (uf == null)
@@ -28,22 +29,17 @@ public class SpecModelo {
     }
 
 
+
     public static Specification<Modelo> BR(String br) {
         return (root, criteriaQuery, criteriaBuilder) ->  {
             if (br == null)
                 return criteriaBuilder.conjunction();
+            if (Integer.valueOf(br) <100 && br.length()==2)
+                return criteriaBuilder.equal(root.get("br"), "0" + br.replaceAll("[^0-9]+", ""));
             return criteriaBuilder.equal(root.get("br"), br.replaceAll("[^0-9]+", ""));
         };
     }
 
-
-    public static Specification<Modelo> condicao(String condicao) {
-        return (root, criteriaQuery, criteriaBuilder) ->  {
-            if (condicao == null)
-                return criteriaBuilder.conjunction();
-            return criteriaBuilder.like(root.get("condicao"), "%" + condicao.toUpperCase() + "%");
-        };
-    }
 
 
     public static Specification<Modelo> nome(String nome) {
@@ -55,6 +51,17 @@ public class SpecModelo {
     }
 
 
+
+    public static Specification<Modelo> condicao(String condicao) {
+        return (root, criteriaQuery, criteriaBuilder) ->  {
+            if (condicao == null)
+                return criteriaBuilder.conjunction();
+            return criteriaBuilder.like(root.get("condicao"), "%" + condicao.toUpperCase() + "%");
+        };
+    }
+
+
+
     public static Specification<Modelo> km(String km) {
         return (root, criteriaQuery, criteriaBuilder) ->  {
             if (km == null)
@@ -64,22 +71,22 @@ public class SpecModelo {
     }
 
 
+
     public static Specification<Modelo> kmi(String kmi) {
         return (root, criteriaQuery, criteriaBuilder) ->  {
             if (kmi == null)
                 return criteriaBuilder.conjunction();
-            return criteriaBuilder.greaterThan(root.get("km"), Integer.valueOf(kmi));
+            return criteriaBuilder.greaterThanOrEqualTo(root.get("km"), Integer.valueOf(kmi));
         };
     }
+
 
 
     public static Specification<Modelo> kmf(String kmf) {
         return (root, criteriaQuery, criteriaBuilder) ->  {
             if (kmf == null)
                 return criteriaBuilder.conjunction();
-            return criteriaBuilder.lessThan(root.get("km"), Integer.valueOf(kmf));
+            return criteriaBuilder.lessThanOrEqualTo(root.get("km"), Integer.valueOf(kmf));
         };
     }
-
-    
 }

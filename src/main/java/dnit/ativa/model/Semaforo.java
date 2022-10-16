@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 @Data
-@Entity  @Table(name = "cachepardal")
+@Entity  @Table(name = "cachesemaforo")
 public class Semaforo implements Modelo {
 
     @Id  @JsonIgnore
